@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>مِهراز | رازی از دل طبیعت</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background: linear-gradient(135deg, #eef5ea 0%, #dfe8da 100%);
+            font-family: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            padding: 28px 20px 48px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* کارت اصلی برند */
+        .brand-card {
+            max-width: 540px;
+            margin: 0 auto;
+            background: rgba(255, 255, 248, 0.96);
+            border-radius: 36px;
+            box-shadow: 0 20px 35px -12px rgba(45, 65, 35, 0.25), 0 2px 6px rgba(0, 0, 0, 0.03);
+            padding: 38px 28px 44px;
+            border: 1px solid rgba(135, 165, 110, 0.3);
+            transition: all 0.2s;
+        }
+
+        /* هدر */
+        .brand-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .brand-name {
+            font-size: 3.4rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(125deg, #2c5e2a, #3f7640, #2d6a2c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 2px 3px 12px rgba(70, 100, 50, 0.15);
+            margin-bottom: 6px;
+            line-height: 1.2;
+        }
+
+        .brand-name-latin {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #557a4a;
+            letter-spacing: 1px;
+            margin-top: -4px;
+            margin-bottom: 14px;
+            opacity: 0.8;
+        }
+
+        /* شعار با فاصله از نام برند */
+        .brand-tagline {
+            font-size: 1.05rem;
+            font-weight: 500;
+            background: rgba(90, 125, 70, 0.12);
+            display: inline-block;
+            padding: 6px 22px;
+            border-radius: 60px;
+            color: #386a32;
+            letter-spacing: -0.2px;
+            backdrop-filter: blur(2px);
+            margin-top: 8px;
+            box-shadow: inset 0 0 0 1px rgba(110, 150, 80, 0.2), 0 1px 3px rgba(0,0,0,0.02);
+        }
+         /* شعار با فاصله از نام برند */
+        .brand-tagline2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            /* background: rgba(90, 125, 70, 0.12); */
+            /* display: inline-block; */
+            padding: 0px 22px 22px;
+            /* border-radius: 60px; */
+            color: #386a32;
+            letter-spacing: -0.2px;
+            backdrop-filter: blur(2px);
+            margin-top: 8px;
+            /* box-shadow: inset 0 0 0 1px rgba(110, 150, 80, 0.2), 0 1px 3px rgba(0,0,0,0.02); */
+        }
+
+        /* دایورتور ظریف */
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #bdd6aa, #8bb56a, #bdd6aa, transparent);
+            margin: 20px 0 28px 0;
+            width: 100%;
+            border-radius: 4px;
+        }
+
+        /* ---------- استایل NEW کارت هر شبکه اجتماعی (چیدمان اصلاح شده) ---------- */
+        .social-item {
+            background: #ffffff;
+            margin-bottom: 20px;
+            padding: 18px 20px 20px 20px;
+            border-radius: 26px;      /* گوشه‌های ملایم و مستطیل‌گونه */
+            box-shadow: 0 6px 14px -6px rgba(60, 70, 40, 0.1);
+            border: 1px solid #e2eed7;
+            transition: all 0.2s;
+        }
+
+        /* ردیف اول: آیکن + عنوان شبکه (در یک خط) */
+        .social-row-top {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+            flex-wrap: nowrap;
+        }
+
+        /* آیکون شبکه - بدون ایکن گیاه اضافی */
+        .icon-bg {
+            width: 52px;
+            height: 52px;
+            background: #f4f8f0;
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: inset 0 1px 1px rgba(0,0,0,0.02), 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .social-name {
+            font-weight: 680;
+            font-size: 1.3rem;
+            color: #2a4930;
+            letter-spacing: -0.3px;
+        }
+
+        /* ردیف دوم: دکمه‌های اندروید و آیفون در یک خط و وسط کارت */
+        .social-row-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* استایل دکمه‌ها (هر کدوم فقط یک ایکن گیاه ساده) */
+        .social-btn {
+            border: none;
+            background: #fafcf7;
+            padding: 10px 16px;
+            border-radius: 60px;
+            font-size: 0.9rem;
+            font-weight: 590;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+            border: 1px solid #cde0be;
+            font-family: inherit;
+            color: #2a5330;
+            background: linear-gradient(115deg, #fefef9, #f9fdf5);
+        }
+
+        .social-btn:active {
+            transform: scale(0.96);
+            background: #eef4e7;
+            border-color: #b3d29a;
+        }
+
+        .btn-icon {
+            font-size: 0.95rem;
+            filter: drop-shadow(0 1px 1px rgba(0,0,0,0.05));
+        }
+
+        /* تمایز ملایم دکمه اندروید و آیفون */
+        .btn-android {
+            background: linear-gradient(115deg, #f4faf0, #eff7e9);
+            border-color: #c7ddb4;
+        }
+        .btn-ios {
+            background: linear-gradient(115deg, #f4f8fe, #eef4fc);
+            border-color: #c9ddf5;
+            color: #2c5a38;
+        }
+
+        /* دیالوگ شفاف */
+        .custom-dialog {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(45, 65, 35, 0.5);
+            backdrop-filter: blur(6px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0.2s, opacity 0.2s;
+        }
+
+        .custom-dialog.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .dialog-content {
+            background: #fffef8;
+            max-width: 280px;
+            width: 80%;
+            border-radius: 40px;
+            text-align: center;
+            padding: 28px 20px 26px;
+            box-shadow: 0 30px 35px rgba(35, 55, 25, 0.3);
+            transform: scale(0.95);
+            transition: transform 0.2s ease;
+            border: 1px solid #cce0bb;
+        }
+
+        .custom-dialog.active .dialog-content {
+            transform: scale(1);
+        }
+
+        .dialog-message {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 12px 0 18px;
+            color: #2f5e32;
+            direction: rtl;
+            background: #f1f8ec;
+            padding: 6px 12px;
+            border-radius: 50px;
+            display: inline-block;
+        }
+
+        .dialog-icon {
+            font-size: 44px;
+        }
+
+        .dialog-close {
+            background: #578b4c;
+            border: none;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: 8px;
+            cursor: pointer;
+            width: 75%;
+            transition: all 0.2s;
+        }
+        .dialog-close:active {
+            background: #3f6a38;
+            transform: scale(0.97);
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 28px;
+            font-size: 0.7rem;
+            color: #567848;
+            background: rgba(225, 240, 210, 0.6);
+            padding: 6px 12px;
+            border-radius: 60px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            direction: rtl;
+            font-weight: 500;
+        }
+
+        /* واکنشگرایی موبایل: در صفحه‌های خیلی کوچک دکمه‌ها ممکن است به دو خط بروند ولی همچنان وسط چین (قابل قبول) */
+        @media (max-width: 480px) {
+            .brand-card {
+                padding: 28px 18px 32px;
+            }
+            .social-item {
+                padding: 16px 16px 18px;
+            }
+            .social-row-top {
+                margin-bottom: 16px;
+            }
+            .icon-bg {
+                width: 44px;
+                height: 44px;
+                font-size: 24px;
+            }
+            .social-name {
+                font-size: 1.15rem;
+            }
+            .social-btn {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+            .social-row-buttons {
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .social-btn {
+                padding: 6px 12px;
+                font-size: 0.73rem;
+            }
+            .brand-name {
+                font-size: 2.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="brand-card">
+    <div class="brand-header">
+        <div class="brand-name">مِهراز</div>
+        <div class="brand-name-latin">Mehraz</div>
+        <div class="brand-tagline">رازی از دل طبیعت</div>
+    </div>
+    <div class="divider"></div>
+     <div class="brand-tagline2">مِهراز در شبکه های اجتماعی</div>
+
+    <!-- شبکه 1: بله (اجماعی) - طبق ساختار جدید: ردیف اول آیکن+عنوان - ردیف دوم دکمه‌ها وسط -->
+    <div class="social-item">
+        <div class="social-row-top">
+            <div class="icon-bg">✅</div>
+            <span class="social-name">بله</span>
+        </div>
+        <div class="social-row-buttons">
+            <button class="social-btn btn-android" data-platform="bale" data-os="android">
+                <span class="btn-icon">🌿</span> بله برای اندروید
+            </button>
+            <button class="social-btn btn-ios" data-platform="bale" data-os="ios">
+                <span class="btn-icon">🍃</span> بله برای آیفون
+            </button>
+        </div>
+    </div>
+
+    <!-- شبکه 2: روبیکا -->
+    <div class="social-item">
+        <div class="social-row-top">
+            <div class="icon-bg">🟣</div>
+            <span class="social-name">روبیکا</span>
+        </div>
+        <div class="social-row-buttons">
+            <button class="social-btn btn-android" data-platform="rubika" data-os="android">
+                <span class="btn-icon">🌿</span> روبیکا برای اندروید
+            </button>
+            <button class="social-btn btn-ios" data-platform="rubika" data-os="ios">
+                <span class="btn-icon">🍃</span> روبیکا برای آیفون
+            </button>
+        </div>
+    </div>
+
+    <!-- شبکه 3: تلگرام -->
+    <div class="social-item">
+        <div class="social-row-top">
+            <div class="icon-bg">✈️</div>
+            <span class="social-name">تلگرام</span>
+        </div>
+        <div class="social-row-buttons">
+            <button class="social-btn btn-android" data-platform="telegram" data-os="android">
+                <span class="btn-icon">🌿</span> تلگرام برای اندروید
+            </button>
+            <button class="social-btn btn-ios" data-platform="telegram" data-os="ios">
+                <span class="btn-icon">🍃</span> تلگرام برای آیفون
+            </button>
+        </div>
+    </div>
+
+    <!-- شبکه 4: اینستاگرام -->
+    <div class="social-item">
+        <div class="social-row-top">
+            <div class="icon-bg">📷</div>
+            <span class="social-name">اینستاگرام</span>
+        </div>
+        <div class="social-row-buttons">
+            <button class="social-btn btn-android" data-platform="instagram" data-os="android">
+                <span class="btn-icon">🌿</span> اینستاگرام اندروید
+            </button>
+            <button class="social-btn btn-ios" data-platform="instagram" data-os="ios">
+                <span class="btn-icon">🍃</span> اینستاگرام آیفون
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="footer-note">
+    🌱 لمس هر دکمه - پیام اختصاصی برای تست
+</div>
+
+<!-- دیالوگ مودال -->
+<div id="customDialog" class="custom-dialog">
+    <div class="dialog-content">
+        <div class="dialog-icon">🌿</div>
+        <div class="dialog-message" id="dialogMessageText">پیام</div>
+        <button class="dialog-close" id="closeDialogBtn">آشتی با طبیعت</button>
+    </div>
+</div>
+
+<script>
+    (function() {
+        const dialogOverlay = document.getElementById('customDialog');
+        const dialogMessageSpan = document.getElementById('dialogMessageText');
+        const closeBtn = document.getElementById('closeDialogBtn');
+
+        function showDialog(message) {
+            if (!dialogOverlay || !dialogMessageSpan) return;
+            dialogMessageSpan.innerText = message;
+            dialogOverlay.classList.add('active');
+        }
+
+        function closeDialog() {
+            if (dialogOverlay) dialogOverlay.classList.remove('active');
+        }
+
+        if (closeBtn) closeBtn.addEventListener('click', closeDialog);
+        if (dialogOverlay) {
+            dialogOverlay.addEventListener('click', function(e) {
+                if (e.target === dialogOverlay) closeDialog();
+            });
+        }
+
+        // مدیریت کلیک دکمه‌ها و نمایش دیالوگ با متن مناسب
+        function handleButtonClick(event) {
+            const button = event.currentTarget;
+            const platform = button.getAttribute('data-platform');
+            const os = button.getAttribute('data-os');
+            
+            let socialName = '';
+            switch (platform) {
+                case 'bale': socialName = 'بله'; break;
+                case 'rubika': socialName = 'روبیکا'; break;
+                case 'telegram': socialName = 'تلگرام'; break;
+                case 'instagram': socialName = 'اینستاگرام'; break;
+                default: socialName = 'شبکه';
+            }
+            let osText = (os === 'android') ? 'اندروید' : ((os === 'ios') ? 'آیفون' : '');
+            let finalMessage = `${socialName} برای ${osText}`;
+            
+            showDialog(finalMessage);
+            if (navigator.vibrate) navigator.vibrate(12);
+            console.log(`[مِهراز] ${finalMessage}`);
+        }
+
+        const allButtons = document.querySelectorAll('.social-btn');
+        allButtons.forEach(btn => {
+            btn.addEventListener('click', handleButtonClick);
+            // بهبود لمسی در موبایل
+            btn.addEventListener('touchstart', (e) => {}, { passive: true });
+        });
+
+        // انیمیشن ورودی ملایم
+        const card = document.querySelector('.brand-card');
+        if(card) {
+            card.style.animation = 'fadeSlideUp 0.4s ease-out';
+            const styleAnim = document.createElement('style');
+            styleAnim.textContent = `
+                @keyframes fadeSlideUp {
+                    from { opacity: 0; transform: translateY(16px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+            `;
+            document.head.appendChild(styleAnim);
+        }
+    })();
+</script>
+</body>
+</html>
